@@ -27,7 +27,7 @@ mongoose.connection.on('connected', () => {
 app.use(express.urlencoded({ extended: false })); // look up what this does
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); //middleware so that our app can read and apply our css rules
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
